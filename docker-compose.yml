@@ -9,6 +9,8 @@ services:
         - ~/.ssh:/var/jenkins_home/.ssh
         - /var/run/docker.sock:/var/run/docker.sock
         - /var/lib/docker:/var/lib/docker
+      environment:
+        - JAVA_OPTS=${JAVA_OPTS}
       ports:
         - 7070:8080
       restart: always
