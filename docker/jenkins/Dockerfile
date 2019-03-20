@@ -8,7 +8,11 @@ RUN apt-get update \
       && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update
-RUN apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common ansible
+RUN apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
+
+RUN easy_install pip
+RUN pip install --upgrade pip
+RUN pip install ansible
 
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable"
