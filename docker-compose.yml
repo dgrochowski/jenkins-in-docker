@@ -1,16 +1,15 @@
 version: "3.1"
 services:
-
     jenkins:
       build: docker/jenkins
       working_dir: /var/jenkins_home
       volumes:
-        - ./jenkins_home:/var/jenkins_home
-        - ~/.ssh:/var/jenkins_home/.ssh
+        - ${JENKINS_HOME}:/var/jenkins_home
+        - ${SSH_DIR}:/var/jenkins_home/.ssh
         - /var/run/docker.sock:/var/run/docker.sock
         - /var/lib/docker:/var/lib/docker
       environment:
         - JAVA_OPTS=${JAVA_OPTS}
       ports:
-        - 7070:8080
+        - ${JENKINS_PORT}:8080
       restart: always
