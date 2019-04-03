@@ -5,7 +5,6 @@ services:
       working_dir: /var/jenkins_home
       volumes:
         - ${JENKINS_HOME}:/var/jenkins_home
-        - ${SSH_DIR}:/var/jenkins_home/.ssh
         - /var/run/docker.sock:/var/run/docker.sock
         - /var/lib/docker:/var/lib/docker
       environment:

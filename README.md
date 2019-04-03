@@ -16,3 +16,10 @@ Powered by [Docker](https://docs.docker.com/) with [Docker-compose](https://docs
 - `docker-compose down`
 - `docker pull jenkins/jenkins:lts`
 - `docker-compose up --build -d`
+
+## TIPS
+
+- If you wish to use ssh inside Jenkins please link .ssh directory:
+```bash
+sudo ln -s ~/.ssh /var/jenkins_home/.ssh
+```
