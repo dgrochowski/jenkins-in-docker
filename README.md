@@ -1,8 +1,15 @@
 # Jenkins
 Powered by [Docker](https://docs.docker.com/) with [Docker-compose](https://docs.docker.com/compose/) - [https://hub.docker.com/r/jenkins/jenkins](https://hub.docker.com/r/jenkins/jenkins)
 
-- `docker-compose up --build -d`
-- `http://localhost:7070`
+## How to use
+
+- prepare `.env` file (`.env.dist` is an example file)
+- start container `docker-compose up --build -d`
+- visit `http://localhost:8080`
+
+## Log into container
+
+- `docker-compose exec jenkins bash`
 
 ## Upgrading to the latest version
 
