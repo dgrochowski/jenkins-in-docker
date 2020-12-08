@@ -2,6 +2,9 @@ FROM jenkins/jenkins:lts
 
 USER root
 
+RUN cp /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
+RUN echo "Europe/Warsaw" > /etc/timezone
+
 RUN apt-get update \
       && apt-get upgrade -y \
       && apt-get install -y sudo libltdl-dev \
